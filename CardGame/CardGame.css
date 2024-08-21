@@ -1,0 +1,192 @@
+* {
+  margin: 0; /* Tüm öğelerin dış boşluğunu sıfırlar */
+  border: 0; /* Tüm öğelerin kenar boşluğunu sıfırlar */
+  padding: 0; /* Tüm öğelerin iç boşluğunu sıfırlar */
+}
+
+#main {
+  position: relative; /* İçerik konumunu ayarlar */
+  background-image: url(images/cards/Adsız\ tasarım.png); /* Arka plan resmi ayarlar */
+  background-size: cover; /* Arka plan resmini kapsar */
+  background-position: center; /* Arka plan resmini merkezler */
+  background-repeat: no-repeat; /* Arka plan resminin tekrarlanmamasını sağlar */
+  box-sizing: border-box; /* Kutunun boyut hesaplamasını ayarlar */
+  display: flex; /* Flexbox düzenini kullanır */
+  flex-direction: column; /* Elemanları dikey olarak yerleştirir */
+  min-height: 100vh; /* Minimum yükseklik olarak %100 görünüm yüksekliği ayarlar */
+}
+
+.close-cards {
+  margin: 50px; /* Dış boşluk ayarlar */
+  position: absolute; /* Kesin konumlandırma yapar */
+  border: 5px solid rgb(19, 78, 3); /* Kartların etrafına siyah kenarlık ekler */
+  background-clip: padding-box; /* Arka planın iç boşluktan etkilenmemesini sağlar */
+  padding: 5px; /* İç boşluk ayarlar */
+  top: 29%; /* Üstten %29 boşluk bırakır */
+  left: 9.5%; /* Soldan %9.5 boşluk bırakır */
+  z-index: 10; /* Üst öğelerin arkasında görünür olmasını sağlar */
+  width: 120px; /* Genişliği 120 piksel yapar */
+  box-shadow: 0 0 0 15px rgb(37, 157, 23) , 0 0 0 20px rgb(49, 69, 14); /* Kartın etrafında gölge efekti oluşturur */
+  border-radius: 10px; /* Kart köşelerini yuvarlatır */
+}
+
+.close-cards img {
+  width: 100%; /* Resmin genişliğini kapsayıcıya göre ayarlar */
+  height: auto; /* Orantılı yüksekliği korur */
+  display: block; /* Boşluk bırakmamak için */
+}
+
+.close-cards2 {
+  display: inline-block; /* Yan yana gösterir */
+  margin-top: 30%; /* Üstten %30 boşluk bırakır */
+  width: 19.5%; /* Genişliği %19.5 yapar */
+  text-align: right; /* Metni sağa hizalar */
+  color: rgb(19, 78, 3); /* Metin rengini siyah yapar */
+  font-size: 30px; /* Yazı boyutunu 30 piksel yapar */ 
+}
+
+.close-cards2 h3 {
+  color: white; /* Başlık rengini beyaz yapar */
+  background-color: rgb(19, 78, 3); /* Arka plan rengini siyah yapar */
+  padding: 10px; /* İç boşluk ayarlar */
+  border-radius: 10px; /* Köşeleri yuvarlatır */
+  display: inline; /* Elemanı satır içi gösterir */
+  border: 3px solid rgb(30, 80, 41); /* Kenarlık ekler */
+}
+
+.cards-container, .cards-container-user, .cards-container-middle {
+  position: absolute; /* Kesin konumlandırma yapar */
+  display: flex; /* Flexbox düzenini kullanır */
+  justify-content: center; /* Kartları yatay olarak ortalar */
+  gap: -40px; /* Kartlar arasında negatif boşluk bırakır */
+}
+
+.cards-container {
+  top: 45.8%; /* Üstten %44 boşluk bırakır */
+  left: 15.6%; /* Soldan %20 boşluk bırakır */
+  transform: translateX(-50%); /* Yatayda ortalar */
+  transform: translateY(-20%); /* Dikeyde ayarlar */
+}
+
+.cards-container-user {
+  top: 45.8%; /* Üstten %44 boşluk bırakır */
+  left: 15.6%; /* Soldan %20 boşluk bırakır */
+  transform: translateX(-50%); /* Yatayda ortalar */
+}
+
+.cards-container-middle{
+  top: 40%; /* Üstten %44 boşluk bırakır */
+  left: 20%; /* Soldan %20 boşluk bırakır */
+  transform: translateX(-50%); /* Yatayda ortalar */
+}
+.card, .card-user, .cards-middle {
+  width: 120px; /* Kartların genişliği */
+  height: 168px; /* Kartların yüksekliği */
+  position: absolute; /* Kesin konumlandırma yapar */
+  top: 50%; /* Başlangıçta sayfanın ortasına hizala */
+  left: 50%; /* Başlangıçta sayfanın ortasına hizala */
+  opacity: 0; /* Başlangıçta kartları görünmez yapar */
+  transform: translate(-50%, -50%) rotate(0); /* Başlangıç konumu ve açısını ayarlar */
+  transition: all 1s ease; /* Animasyon süresi ve geçiş efekti */
+}
+
+.card.animate, .card-user.animate, .cards-middle.animate {
+  opacity: 1; /* Kartları görünür yapar */
+}
+
+.card img, .card-user img, .cards-middle img {
+  width: 100%; /* Resmin genişliğini kapsayıcıya göre ayarlar */  
+  height: 100%; /* Resmin yüksekliğini kapsayıcıya göre ayarlar */
+  display: block; /* Boşluk bırakmamak için */
+}
+
+
+#dealButton {
+  margin-left: 910px; /* Soldan 910 piksel boşluk bırakır */
+  margin-right: 910px; /* Sağdan 910 piksel boşluk bırakır */
+  padding: 9px; /* İç boşluk ayarlar */
+  border-radius: 10px;
+  background-color: aquamarine; /* Buton arka plan rengini ayarlar */
+  color: black; /* Buton metin rengini siyah yapar */
+}
+
+/* Toplanan kartlar*/
+.collection {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#scoreboard {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #99cc66;
+  border: 5px solid #1b4a03;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.score-row-1, .score-row-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px;
+}
+#compScore {
+  margin-right: 250px;
+}
+ #usrScore{
+  margin: 0;
+ }
+
+ .modal {
+  display: none; /* Başlangıçta görünmez */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Koyu gri arka plan */
+  overflow: auto; /* İçerik taşarsa kaydırma çubuğu ekle */
+  padding-top: 320px;
+}
+
+.modal-content {
+  background-color: rgba(0, 128, 0, 0.9); /* Yeşil arka plan */
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Modal genişliği */
+  max-width: 600px; /* Maksimum genişlik */
+  color: white; /* Beyaz yazı */
+  text-align: center; /* Metni ortala */
+  font-size: 32px; /* Yazı boyutu (istediğiniz boyutu buraya ayarlayabilirsiniz) */
+}
+
+
+.close {
+  color: white; /* Beyaz yazı */
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #548a66; /* Fare üzerine geldiğinde açık gri */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.darken {
+  opacity: 0.5; /* Karartma efekti */
+}
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Karakter setini UTF-8 olarak ayarlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive tasarım için ayarlar -->
+    <title>Pişti</title> <!-- Sayfanın başlığı -->
+    <link rel="stylesheet" href="CardGame.css"> <!-- CSS dosyasını bağlantılar -->
+</head>
+<body id="main"> <!-- Ana gövde, id'si "main" olan bir body -->
+    <div class="close-cards"> <!-- Kapalı kartları göstermek için bir div -->
+        <img src="images/cards/BACK.png" alt=""> <!-- Kapalı kart resmi -->
+    </div>
+    <div class="close-cards2"> <!-- Kartların başlık kısmı -->
+        <h3>Kartlar</h3> <!-- Başlık -->
+    </div>
+
+    <div class="cards-container"> <!-- Bilgisayar kartları için kapsayıcı -->
+        <div class="card"><img src="images/cards/BACK.png" alt="Card 1"></div> <!-- Bilgisayar için kart 1 -->
+        <div class="card"><img src="images/cards/BACK.png" alt="Card 2"></div> <!-- Bilgisayar için kart 2 -->
+        <div class="card"><img src="images/cards/BACK.png" alt="Card 3"></div> <!-- Bilgisayar için kart 3 -->
+        <div class="card"><img src="images/cards/BACK.png" alt="Card 4"></div> <!-- Bilgisayar için kart 4 -->
+    </div>
+    <div class="cards-container-user"> <!-- Kullanıcı kartları için kapsayıcı -->
+        <div class="card-user"><img src="images/cards/BACK.png" alt="Card 1-user"></div> <!-- Kullanıcı için kart 1 -->
+        <div class="card-user"><img src="images/cards/BACK.png" alt="Card 2-user"></div> <!-- Kullanıcı için kart 2 -->
+        <div class="card-user"><img src="images/cards/BACK.png" alt="Card 3-user"></div> <!-- Kullanıcı için kart 3 -->
+        <div class="card-user"><img src="images/cards/BACK.png" alt="Card 4-user"></div> <!-- Kullanıcı için kart 4 -->
+    </div>
+    <div class="cards-container-middle"> <!-- Orta alanda gösterilecek kart için kapsayıcı -->
+        <div class="cards-middle"><img src="images/cards/BACK.png" alt="Card 1-middle"></div> 
+        <div class="cards-middle"><img src="images/cards/BACK.png" alt="Card 2-middle"></div>
+        <div class="cards-middle"><img src="images/cards/BACK.png" alt="Card 3-middle"></div>
+        <div class="cards-middle"><img src="images/cards/BACK.png" alt="Card 4-middle"></div>             
+    </div>
+    
+    <div class="user-collection"></div>
+    <div class="computer-collection"></div>
+    <div class="user-core"></div>
+    <div class="computer-score"></div>
+
+    <button id="dealButton">Kartları Dağıt</button> <!-- Kartları dağıtmak için buton -->
+
+    <div id="scoreboard">
+        <h3 id="compScore">Computer:</h3>
+        <div class="score-row-1">
+            <div>Computer Score:</div>      
+            <div id="computerScore">0</div>
+            <div>Computer Pisti Score:</div>
+            <div id="computerPistiScore">0</div>
+        </div>
+        <br>
+        <h3 id="usrScore">User:</h3>
+        <div class="score-row-2">
+            <div> User Score:</div>
+            <div id="userScore">0</div>
+            <div>User Pisti Score</div>
+            <div id="userPistiScore">0</div>
+        </div>
+    </div>
+
+    <div id="endGameModal" class="modal"> 
+        <div class="modal-content">
+            <span id="modalClose" class="close">&times;</span>
+            <h2>Oyun Bitti!</h2>
+            <p id="winnerMessage"></p>
+            <p>Bilgisayar Puanı: <span id="computerTotalScore"></span></p>
+            <p>Kullanıcı Puanı: <span id="userTotalScore"></span></p>
+            <button id="closeModalButton">Tamam</button>
+        </div>
+    </div>
+    
+    
+
+    <script src="CardGame.js"></script> <!-- JavaScript dosyasını bağlantılar -->
+</body>
+</html>
